@@ -42,9 +42,8 @@ from billiard.queues import _SimpleQueue
 from kombu.asynchronous import READ, WRITE, ERR
 from kombu.serialization import pickle as _pickle
 from kombu.utils import fxrange
-from kombu.utils.compat import get_errno
 from kombu.utils.eventio import SELECT_BAD_FD
-from celery.five import Counter, items, string_t, text_t, values
+from celery.five import Counter, get_errno, items, string_t, text_t, values
 from celery.utils.log import get_logger
 from celery.utils.text import truncate
 from celery.worker import state as worker_state

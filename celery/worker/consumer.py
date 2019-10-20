@@ -27,7 +27,6 @@ from billiard.exceptions import RestartFreqExceeded
 from kombu.asynchronous.semaphore import DummyLock
 from kombu.common import QoS, ignore_errors
 from kombu.syn import _detect_environment
-from kombu.utils.compat import get_errno
 from kombu.utils.encoding import safe_repr, bytes_t
 from kombu.utils.limits import TokenBucket
 
@@ -36,7 +35,7 @@ from celery import bootsteps
 from celery.app.trace import build_tracer
 from celery.canvas import signature
 from celery.exceptions import InvalidTaskError
-from celery.five import items, values
+from celery.five import get_errno, items, values
 from celery.utils.functional import noop
 from celery.utils.log import get_logger
 from celery.utils.objects import Bunch

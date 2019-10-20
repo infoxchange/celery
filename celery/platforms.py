@@ -24,12 +24,11 @@ from collections import namedtuple
 from billiard import current_process
 # fileno used to be in this module
 from kombu.utils import maybe_fileno
-from kombu.utils.compat import get_errno
 from kombu.utils.encoding import safe_str
 from contextlib import contextmanager
 
 from .local import try_import
-from .five import items, range, reraise, string_t, zip_longest
+from .five import get_errno, items, range, reraise, string_t, zip_longest
 from .utils.functional import uniq
 
 _setproctitle = try_import('setproctitle')
