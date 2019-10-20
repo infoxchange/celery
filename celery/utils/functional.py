@@ -22,7 +22,7 @@ from celery.five import UserDict, UserList, items, keys, range
 
 __all__ = ['LRUCache', 'is_list', 'maybe_list', 'memoize', 'mlazy', 'noop',
            'first', 'firstmethod', 'chunks', 'padlist', 'mattrgetter', 'uniq',
-           'regen', 'dictfilter', 'lazy', 'maybe_evaluate']
+           'regen', 'dictfilter', 'lazy', 'maybe_evaluate', 'maybe']
 
 IS_PYPY = hasattr(sys, 'pypy_version_info')
 
@@ -136,6 +136,11 @@ class LRUCache(UserDict):
 
         def items(self):
             return list(self._iterate_items())
+
+
+def maybe(typ, val):
+    """Call typ on value if val is defined."""
+    return typ(val) if val is not None else val
 
 
 def memoize(maxsize=None, keyfun=None, Cache=LRUCache):
