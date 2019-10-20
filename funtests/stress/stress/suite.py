@@ -5,11 +5,9 @@ import random
 import socket
 import sys
 
-from collections import namedtuple
+from collections import namedtuple, OrderedDict
 from itertools import count
 from time import sleep
-
-from kombu.utils.compat import OrderedDict
 
 from celery import group, VERSION_BANNER
 from celery.exceptions import TimeoutError
