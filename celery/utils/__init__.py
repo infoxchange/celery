@@ -25,7 +25,7 @@ from pprint import pprint
 from kombu.entity import Exchange, Queue
 
 from celery.exceptions import CPendingDeprecationWarning, CDeprecationWarning
-from celery.five import WhateverIO, items, reraise, string_t
+from celery.five import WhateverIO, items, reraise, string_t, kwdict
 
 __all__ = ['worker_direct', 'warn_deprecated', 'deprecated', 'lpmerge',
            'is_iterable', 'isatty', 'cry', 'maybe_reraise', 'strtobool',
@@ -403,5 +403,5 @@ from .imports import (          # noqa
     instantiate, import_from_cwd
 )
 from .functional import chunks, noop                    # noqa
-from kombu.utils import cached_property, kwdict, uuid   # noqa
+from kombu.utils import cached_property, uuid   # noqa
 gen_unique_id = uuid

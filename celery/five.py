@@ -33,7 +33,7 @@ __all__ = ['Counter', 'reload', 'UserList', 'UserDict', 'Queue', 'Empty',
            'nextfun', 'reraise', 'WhateverIO', 'with_metaclass',
            'OrderedDict', 'THREAD_TIMEOUT_MAX', 'format_d',
            'class_property', 'reclassmethod', 'create_module',
-           'recreate_module', 'monotonic']
+           'recreate_module', 'monotonic', 'kwdict']
 
 # ############# py3k #########################################################
 PY3 = sys.version_info[0] == 3
@@ -52,6 +52,10 @@ try:
     from UserDict import UserDict           # noqa
 except ImportError:                         # pragma: no cover
     from collections import UserDict        # noqa
+
+
+def kwdict(kwargs):
+    return kwargs
 
 
 if PY3:  # pragma: no cover

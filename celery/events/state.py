@@ -30,10 +30,10 @@ from time import time
 from weakref import ref
 
 from kombu.clocks import timetuple
-from kombu.utils import cached_property, kwdict
+from kombu.utils import cached_property
 
 from celery import states
-from celery.five import class_property, items, values
+from celery.five import class_property, items, kwdict, values
 from celery.utils import deprecated
 from celery.utils.functional import LRUCache, memoize
 from celery.utils.log import get_logger

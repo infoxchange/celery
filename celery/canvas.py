@@ -18,9 +18,10 @@ from functools import partial as _partial, reduce
 from operator import itemgetter
 from itertools import chain as _chain
 
-from kombu.utils import cached_property, fxrange, kwdict, reprcall, uuid
+from kombu.utils import cached_property, fxrange, reprcall, uuid
 
 from celery._state import current_app
+from celery.five import kwdict
 from celery.utils.functional import (
     maybe_list, is_list, regen,
     chunks as _chunks,

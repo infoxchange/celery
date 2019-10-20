@@ -17,11 +17,12 @@ from billiard.einfo import ExceptionInfo
 from datetime import datetime
 from weakref import ref
 
-from kombu.utils import kwdict, reprcall
+from kombu.utils import reprcall
 from kombu.utils.encoding import safe_repr, safe_str
 
 from celery import signals
 from celery.app.trace import trace_task, trace_task_ret
+from celery.five import kwdict
 from celery.exceptions import (
     Ignore, TaskRevokedError, InvalidTaskError,
     SoftTimeLimitExceeded, TimeLimitExceeded,
