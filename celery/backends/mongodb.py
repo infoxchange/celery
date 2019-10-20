@@ -10,13 +10,12 @@ from __future__ import absolute_import
 
 from datetime import datetime
 
-from kombu.syn import detect_environment
 from kombu.utils import cached_property
 from kombu.utils.url import maybe_sanitize_url
 
 from celery import states
 from celery.exceptions import ImproperlyConfigured
-from celery.five import items, string_t
+from celery.five import detect_environment, items, string_t
 from celery.utils.timeutils import maybe_timedelta
 
 from .base import BaseBackend

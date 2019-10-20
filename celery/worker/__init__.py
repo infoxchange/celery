@@ -21,7 +21,6 @@ except ImportError:  # pragma: no cover
 
 from billiard import cpu_count
 from billiard.util import Finalize
-from kombu.syn import detect_environment
 
 from celery import bootsteps
 from celery.bootsteps import RUN, TERMINATE
@@ -31,7 +30,7 @@ from celery import signals
 from celery.exceptions import (
     ImproperlyConfigured, WorkerTerminate, TaskRevokedError,
 )
-from celery.five import string_t, values
+from celery.five import detect_environment, string_t, values
 from celery.utils import default_nodename, worker_direct
 from celery.utils.imports import reload_from_cwd
 from celery.utils.log import mlevel, worker_logger as logger
