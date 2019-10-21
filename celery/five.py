@@ -453,3 +453,8 @@ def detect_environment():
     if _environment is None:
         _environment = _detect_environment()
     return _environment
+
+
+def python_2_unicode_compatible(cls):
+    """Class decorator to ensure class is compatible with Python 2."""
+    return cls
