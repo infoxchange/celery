@@ -17,7 +17,6 @@ from calendar import monthrange
 from datetime import date, datetime, timedelta, tzinfo
 
 from kombu.utils import cached_property, reprcall
-from kombu.utils.compat import timedelta_seconds
 
 from pytz import timezone as _timezone, AmbiguousTimeError, FixedOffset
 
@@ -53,6 +52,13 @@ TIME_UNITS = (('day', 60 * 60 * 24.0, lambda n: format(n, '.2f')),
 ZERO = timedelta(0)
 
 _local_timezone = None
+
+
+def timedelta_seconds(delta):
+    """Convert :class:`datetime.timedelta` to seconds.
+    Doesn't account for negative values.
+    """
+    return max(delta.total_seconds(), 0)
 
 
 class LocalTimezone(tzinfo):
