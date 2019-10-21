@@ -7,6 +7,7 @@ import logging
 import sys
 
 from datetime import datetime
+from socket import gethostname
 from weakref import ref
 
 from billiard.common import TERM_SIGNAME
@@ -24,7 +25,6 @@ from celery.five import string
 from celery.platforms import signals as _signals
 from celery.utils.functional import maybe, noop
 from celery.utils.log import get_logger
-from celery.utils.nodenames import gethostname
 from celery.utils.time import maybe_iso8601, timezone, maybe_make_aware
 from celery.utils.serialization import get_pickled_exception
 
